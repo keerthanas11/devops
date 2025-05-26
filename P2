@@ -1,0 +1,15 @@
+Create “src/main/webapp/WEB-INF” folder. In that 
+“src/main/webapp/WEB-INF/web.xml” file. 
+ Include below plugin in “web.xml” 
+
+<plugin> 
+<groupId>org.apache.maven.plugins</groupId> 
+<artifactId>maven-war-plugin</artifactId> 
+<configuration> 
+<webXml>src\main\webapp\index.html</webXml>
+</configuration> 
+</plugin> 
+
+
+Manage Jenkins -> Manage Plugins -> Available -> Deploy to Container Plugin, maven 
+integration & git & GitHub Plugin. 
