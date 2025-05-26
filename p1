@@ -1,0 +1,56 @@
+MyApp.java --This file should be in src/main/java
+import java.util.ResourceBundle;
+public class MyApp
+{
+public int userlogin(string inuser,string inpwd)
+{
+ResourceBundle rb= ResourceBundle.getBundle(“config”);
+String username=rb.getstring(“username”);
+String password=rb.getstring(“password”);
+If(inuser.equals(username)&amp;&amp; inpassword(password))
+return 1;
+else
+return 0;
+}
+}
+-------------------------------------------------------------------
+Config.properties --src/main/resources
+username=abc
+password=abc@1234
+-------------------------------------------------------------------
+
+MyAppTest.java code --src/test/java
+package myproject;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import com.myproject.app;
+public class apptest {
+@Test
+public void testlogin1()
+{
+app myapp=new app();
+
+Assert.assertEquals(0,myapp.userlogin(&quot;abc&quot;,&quot;abc1234&quot;));
+}
+@Test
+public void testlogin2()
+{
+app myapp=new app();
+Assert.assertEquals(1,myapp.userlogin(&quot;abc&quot;,&quot;abc@1234&quot;));
+}
+}
+-------------------------------------------------------------------------------
+pom.xml
+
+<dependencies>
+<dependency>
+<groupId>org.testng</groupId>
+<artifactId>testng</artifactId>
+<version>7.5.1</version>
+<scope>test</scope>
+</dependency>
+</dependencies>
+
+--------------------------------------------------------------------------
+Dependencies can be updated by using maven test,build,install  after pom.xml file
+modification.
