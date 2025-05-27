@@ -100,3 +100,9 @@ web.xml
         <webXml>src\main\webapp\index.html</webXml>
     </configuration>
 </plugin>
+_------------------------_-------------
+
+Execute these commands later in terminal 
+docker build -t sample-app .
+docker run -d -p 8095(give unused port number ):8080 sample-app;
+http://localhost:8095
